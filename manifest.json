@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Kariyer.net İlan Önizleme",
+  "short_name": "İlan Önizleme",
+  "version": "1.4.0",
+  "description": "Kariyer.net ilan listesinde bir ilanın üzerine gelince 'İş İlanı Hakkında' bölümünü gösterir; incelenen ve açılan ilanları işaretler, başvurulan/incelenen ilanları gizleyebilir.",
+  "permissions": ["storage"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "İlan Filtresi",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.kariyer.net/*"],
+      "js": ["src/extract.js", "src/history.js", "src/settings.js", "src/highlight.js", "src/content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}

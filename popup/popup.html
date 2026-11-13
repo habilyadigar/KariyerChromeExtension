@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <title>İlan Filtresi</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="../icons/icon48.png" alt="" width="28" height="28">
+    <div>
+      <h1>İlan Filtresi</h1>
+      <p class="sub">Kariyer.net ilan listesinde gizlenecekler</p>
+    </div>
+  </header>
+
+  <main>
+    <label class="row">
+      <span class="text">
+        <span class="name"><span class="dot applied"></span>Başvurulanları gizle</span>
+        <span class="hint">Kariyer.net'te "Başvuruldu" işaretli ilanlar</span>
+      </span>
+      <span class="count" id="count-applied"></span>
+      <input type="checkbox" role="switch" id="hide-applied">
+    </label>
+
+    <label class="row">
+      <span class="text">
+        <span class="name"><span class="dot inspected"></span>İncelenenleri gizle</span>
+        <span class="hint">Kariyer.net'te "İncelendi" işaretli ilanlar</span>
+      </span>
+      <span class="count" id="count-inspected"></span>
+      <input type="checkbox" role="switch" id="hide-inspected">
+    </label>
+  </main>
+
+  <p class="status" id="status" aria-live="polite"></p>
+
+  <footer>
+    <span><span class="frame seen"></span>önizlemede bakıldı</span>
+    <span><span class="frame clicked"></span>açıldı</span>
+  </footer>
+
+  <script src="../src/settings.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
